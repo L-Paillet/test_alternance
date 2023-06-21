@@ -1,1 +1,12 @@
 <h1>Dogs component</h1>
+<ul>
+    <li *ngFor="let dog of dogs">
+        <span>{{dog.name}}</span>
+        <img src="{{dog.img}}" alt="" srcset="">
+        <input [(ngModel)]="dog.name" placeholder="name">
+        <button type="button" title="suppression"
+        (click)="deleteDog(dog)">Supprimer</button>
+
+    </li>
+</ul>
+<app-another-dog></app-another-dog>

@@ -10,18 +10,27 @@ import { Dog } from '../types';
 export class DogsComponent {
   dogs: Dog[] = []
 
-  constructor(private dogService: DogService) {
-  }
+  constructor(
+    private dogService: DogService,
+    ) {}
+  
 
   ngOnInit(): void {
+    this.getDogs();
   }
 
   getDogs(): void {
+    this.dogService.getDogs()
+    .subscribe(dogs => this.dogs = dogs);
   }
 
   updateDog(dog: Dog): void {
+
   }
 
   deleteDog(dog: Dog): void {
+    this.dogs = this.dogs.filter(d => d !== dog);
+    this.dogService.deleteDog(dog.id).subscribe();
   }
 }
+
