@@ -3,10 +3,10 @@
     <li *ngFor="let dog of dogs">
         <span>{{dog.name}}</span>
         <img src="{{dog.img}}" alt="" srcset="">
-        <input [(ngModel)]="dog.name" placeholder="name">
+
         <button type="button" title="suppression"
         (click)="deleteDog(dog)">Supprimer</button>
-
     </li>
 </ul>
+<!-- appel de l'autre component à partir du quel je voulais mettre en place les modifications des noms des chiens -->
 <app-another-dog></app-another-dog>

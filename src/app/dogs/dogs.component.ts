@@ -23,10 +23,11 @@ export class DogsComponent {
     this.dogService.getDogs()
     .subscribe(dogs => this.dogs = dogs);
   }
-
-  updateDog(dog: Dog): void {
-
-  }
+// J'ai voulu me servir du Headers() pour sauvegarder les changements des noms des chiens sur l'API
+  // updateDog(dog: Dog): void {
+  //   const headers = new Headers();
+  //   headers.append('Content-Type', 'application/json');
+  // }
 
   deleteDog(dog: Dog): void {
     this.dogs = this.dogs.filter(d => d !== dog);

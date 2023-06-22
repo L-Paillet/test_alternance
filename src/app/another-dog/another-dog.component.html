@@ -1,1 +1,15 @@
 <p>another-dog works!</p>
+<div *ngFor="let dog of dogs">
+    <div *ngIf="dogs">
+        <h2>{{dog.name}} détail chien</h2>
+        <div>
+            <label>id: </label>{{dog.id}}
+        </div>
+        <div>
+            <label>name: </label>
+<!-- ici j'ai voulu utilisé ngModel pour lier la modification à la valeur "name" -->
+            <input [(ngModel)]="dog.name" placeholder="name" />
+        </div>
+        <!-- <button (click)="save()">Save</button> -->
+    </div>
+</div>
